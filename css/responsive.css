@@ -1,0 +1,29 @@
+@media screen and (width < 1800px) {
+    .container-all{
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-auto-columns: auto;
+        grid-template-rows: 0.5fr 0.5fr 7fr 2fr;
+        margin-top: 15px;
+        grid-gap: 1em;
+    }
+}
+
+@media screen and (width < 400px) {
+    #header{
+        display: flex;
+        flex-flow: column wrap;
+        align-items: end;
+        justify-content: end;
+        margin-top: 15px;
+    }
+
+    .container-header-button{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,52 @@
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.container-all{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-auto-columns: auto;
+    grid-template-rows: 0.5fr 0.5fr 7fr 2fr;
+}
+
+.grid-container-simple{
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+    justify-items: center;
+    align-content: center;
+    grid-gap: 1em;
+}
+
+.login-button{
+    width: 300px;
+    height: 40px;
+}
+
+.input-icon{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.input-icon:hover{
+    border: 1px solid black;
+}
+
+.input-icon input{
+    border: none;
+    outline: none;
+    width: 270px;
+}
+
+#btnCuenta{
+    background-color: rgb(35, 131, 226);
+    border-radius: 4px;
+    border: none;
+    color: white;
+}
+
+

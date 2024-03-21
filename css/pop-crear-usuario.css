@@ -1,0 +1,26 @@
+#popCrearUsuario div h2{
+    text-align: center;
+}
+
+.container-pop-crear-usuario{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 4fr 1fr;
+    align-items: center;
+}
+
+.container-pop-crear-usuario > div{
+    padding: 20px;
+}
+
+#form-pop-crear-usuario{
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-columns: auto;
+    grid-gap: 1em;
+}
+
+#listaRequisitosPass li{
+    list-style: none;
+}
+
