@@ -5,11 +5,12 @@
     justify-content: end;
 }
 
-.container-header-button{
+div.container-header-button{
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     margin-right: 50px;
+    min-width: 110px;
 }
 
 .header-button{
@@ -17,6 +18,10 @@
     margin-right: 5px;
 }
 
-.container-header-button:hover{
+div.container-header-button:hover{
     color: blue;
+}
+
+div.container-header-button span{
+    font-size: 20px;
 }

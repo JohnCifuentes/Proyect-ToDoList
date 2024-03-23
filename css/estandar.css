@@ -20,6 +20,10 @@ input[type="password"]:not(data-compact){
     padding: 8px 6px;
 }
 
+input[type="number"]:not(data-compact){
+    padding: 8px 6px;
+}
+
 button{
     background-color: inherit;
 }
@@ -44,13 +48,37 @@ button{
     width: 80%;
 }
 
+.pop-up-errores{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: auto;
+    margin-top: 10px;
+}
+
+.pop-up-content-errores{
+    background-color: #FCF3CF;
+    border: 1px solid #888;
+    width: 40%;
+    margin: 15% auto;
+    padding: 20px;
+    text-align: center;
+}
+
 .crear-pop-up,.close-pop-up{
     width: 100%;
     height: 40px;
 }
 
+.crear-pop-up:hover{
+    background-color: hsl(145, 63%, 42%, 0.814);
+    color: white;
+}
 
 .close-pop-up:hover{
-    background-color: rgba(255, 0, 0, 0.814);
+    background-color: hsla(6, 63%, 46%, 0.814);   
     color: white;
 }
