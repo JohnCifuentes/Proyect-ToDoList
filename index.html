@@ -2,11 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <title>To Dan List - Pomodor</title>
+        <title>To Dan List - Pomodoro</title>
+        <link rel="shortcut icon" href="./img/tornado.svg"/>
         <link rel="stylesheet" href="./css/estandar.css"></link>
         <link rel="stylesheet" href="./css/header.css"></link>
         <link rel="stylesheet" href="./css/estilos-log.css"/>
-        <link rel="stylesheet" href="./css/pop-crear-usuario.css"/>
+        <link rel="stylesheet" href="./css/home-pop-up.css"/>
         <link rel="stylesheet" href="./css/responsive.css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     </head>
@@ -19,13 +20,11 @@
                     </button>
                     <span> Crear Usuario</span>
                 </div>
-                <div class="container-header-button cursor-pointer">
+                <div class="container-header-button cursor-pointer" id="btnCerrarSesion">
                     <button class="header-button">
                         <i class="bi bi-door-closed-fill"></i>
                     </button>
-                    <span> 
-                        <a href="./index.html"> Cerrar Sesion</a>
-                    </span>
+                    <span> Cerrar Sesion</span>
                 </div>
                 <div class="container-header-button cursor-pointer" id="btnModoPantalla">
                     <button class="header-button">
@@ -42,7 +41,9 @@
                     </span>
                 </div>
             </header>
+            <!---->
             <nav></nav>
+            <!---->
             <main>
                 <div class="grid-container-simple">
                     <div>
@@ -60,7 +61,7 @@
                             </button>                            
                         </div>
                         <div>
-                            <button class="cursor-pointer login-button" btn="btnIncognito">
+                            <button class="cursor-pointer login-button" id="btnIncognito">
                                 <i class="bi bi-incognito"></i> Inicio de sesion unico
                             </button>
                         </div>
@@ -70,12 +71,12 @@
                             <div class="input-icon">
                                 <input type="text" id="loginCorreoUsuario" name="loginCorreoUsuario" 
                                     placeholder="Ingresa tu direccion de correo electronico"/>
-                                <i class="bi bi-x-circle-fill cursor-pointer" id="btnLoginCorreoUsuario"></i>
+                                <i class="bi bi-x-circle-fill cursor-pointer btn-limpiar" id="btnLoginCorreoUsuario"></i>
                             </div>
                             <div class="input-icon">
                                 <input type="password" id="loginPasswordUsuario" name="loginPasswordUsuario" 
                                     placeholder="Ingresa tu contraseña"/>
-                                <i class="bi bi-x-circle-fill cursor-pointer" id="btnLoginPasswordUsuario"></i>
+                                <i class="bi bi-x-circle-fill cursor-pointer btn-limpiar" id="btnLoginPasswordUsuario"></i>
                             </div>
                             <div>
                                 <button class="cursor-pointer login-button" id="btnCuenta">
@@ -86,65 +87,95 @@
                     </div>
                 </div>
             </main>
+            <!---->
             <footer></footer>
-            <!-------------------------------------->
-            <div class="pop-up" id="popCrearUsuario">
-                <div class="pop-up-content">
-                    <h2>Crear usuario</h2>
-                    <div class="container-pop-crear-usuario">
-                        <div>
-                            <form id="form-pop-crear-usuario">
-                                <div class="input-icon">
-                                    <input type="text" id="popNombreUsuario" name="popNombreUsuario" 
-                                        placeholder="Ingresa tu nombre(s) y apellido(s)"/>
-                                    <i class="bi bi-x-circle-fill cursor-pointer" id="btnPopNombreUsuario"></i>
-                                </div>
-                                <div class="input-icon">
-                                    <input type="text" id="popCorreoUsuario" name="popCorreoUsuario" 
-                                        placeholder="Ingresa tu correo electronico"/>
-                                    <i class="bi bi-x-circle-fill cursor-pointer" id="btnPopCorreoUsuario"></i>
-                                </div>
-                                <div class="input-icon">
-                                    <input type="text" id="popTelefonoUsuario" name="popTelefonoUsuario" 
-                                        placeholder="Ingresa tu numero de contacto"/>
-                                    <i class="bi bi-x-circle-fill cursor-pointer" id="btnPopTelefonoUsuario"></i>
-                                </div>
-                                <div class="input-icon">
-                                    <input type="password" id="popContrasenaUsuario" name="popContrasenaUsuario" 
-                                        placeholder="Ingresa tu contrasena"/>
-                                    <i class="bi bi-x-circle-fill cursor-pointer" id="btnPopContrasenaUsuario"></i>
-                                </div>
-                            </form>
-                        </div>
-                        <div>
-                            <span>La contraseña debe de:</span>
-                            <ol id="listaRequisitosPass">
-                                <li><input type="checkbox" class="req-pass" disabled/> 
-                                    Tener entre 8 y 12 caracteres
-                                </li>
-                                <li><input type="checkbox" class="req-pass" disabled/> 
-                                    Tener al menos numero</li>
-                                <li><input type="checkbox" class="req-pass" disabled/> 
-                                    Tener al menos un caracter especial</li>
-                                <li><input type="checkbox" class="req-pass" disabled/> 
-                                    No puede contener la informacion del usuario</li>
-                            </ol>
-                        </div>
-                        <div>
-                            <button class="crear-pop-up cursor-pointer">Crear usuario</button>
-                        </div>
-                        <div>
-                            <button class="close-pop-up cursor-pointer" id="closePopUp">Cancelar</button>
-                        </div>
+        </div>
+        <!---->
+        <div class="pop-up" id="popCrearUsuario">
+            <div class="pop-up-content">
+                <h2>Crear usuario</h2>
+                <div class="pop-crear-usuario">
+                    <div>
+                        <form id="form-pop-crear-usuario">
+                            <div class="input-icon">
+                                <input type="text" id="popCrearUsuarioNombre" name="popCrearUsuarioNombre" 
+                                    placeholder="Ingresa tu nombre(s) y apellido(s)"/>
+                                <i class="bi bi-x-circle-fill cursor-pointer btn-limpiar" id="btnPopCrearUsuarioNombre"></i>
+                            </div>
+                            <div class="input-icon">
+                                <input type="text" id="popCrearUsuarioCorreo" name="popCrearUsuarioCorreo" 
+                                    placeholder="Ingresa tu correo electronico electronico"/>
+                                <i class="bi bi-x-circle-fill cursor-pointer btn-limpiar" id="btnPopCrearUsuarioCorreo"></i>
+                            </div>
+                            <div class="input-icon">
+                                <input type="text" id="popCrearUsuarioTelefono" name="popCrearUsuarioTelefono" 
+                                    placeholder="Ingresa tu numero de contacto"/>
+                                <i class="bi bi-x-circle-fill cursor-pointer btn-limpiar" id="btnPopCrearUsuarioTelefono"></i>
+                            </div>
+                            <div class="input-icon">
+                                <input type="password" id="popCrearUsuarioContrasena" name="popCrearUsuarioContrasena" 
+                                    placeholder="Ingresa tu contrasena"/>
+                                <i class="bi bi-x-circle-fill cursor-pointer btn-limpiar" id="btnPopCrearUsuarioContrasena"></i>
+                            </div>
+                        </form>
                     </div>
-                    
+                    <div>
+                        <span>La contraseña debe de:</span>
+                        <ol id="listaRequisitosPass">
+                            <li><input type="checkbox" class="req-pass" disabled/> 
+                                Tener entre 8 y 12 caracteres
+                            </li>
+                            <li><input type="checkbox" class="req-pass" disabled/> 
+                                Tener al menos numero</li>
+                            <li><input type="checkbox" class="req-pass" disabled/> 
+                                Tener al menos un caracter especial</li>
+                            <li><input type="checkbox" class="req-pass" disabled/> 
+                                No puede contener la informacion del usuario</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <button class="crear-pop-up cursor-pointer" id="crearPopUpCrearUsuario">Crear usuario</button>
+                    </div>
+                    <div>
+                        <button class="close-pop-up cursor-pointer" id="closePopUpCrearUsuario">Cancelar</button>
+                    </div>
                 </div>
             </div>
-            <!-------------------------------------->
-            <div class="pop-up" id="popSesionUnica">
+        </div>
+        <!---->
+        <div class="pop-up" id="popSesionUnica">
+            <div class="pop-up-content">
+                <h2>Crear usuario</h2>
+                <div class="pop-sesion-unico">
+                    <div>
+                        <form id="form-pop-sesion-unico">
+                            <div class="input-icon">
+                                <input type="text" id="popSesionUnicoNombre" name="popSesionUnicoNombre" 
+                                    placeholder="Ingresa tu nombre(s) y apellido(s)"/>
+                                <i class="bi bi-x-circle-fill cursor-pointer btn-limpiar" id="btnPopSesionUnicoNombre"></i>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <button class="crear-pop-up cursor-pointer" id="crearPopUpSesionUnicio">Crear usuario</button>
+                    </div>
+                    <div>
+                        <button class="close-pop-up cursor-pointer" id="closePopUpSesionUnico">Cancelar</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <script src="./js/pop-ventanas.js"></script>
+        <!---->
+        <div class="pop-up-errores" id="popUpError">
+            <div class="pop-up-content-errores">
+                <h2>Advertencia(s)</h2>
+                <ol id="listaErrores"></ol>
+            </div>
+        </div>
+        <script src="./js/clases.js"></script>
+        <script src="./js/constantes.js"></script>
         <script src="./js/general.js"></script>
+        <script src="./js/index-general.js"></script>
+        <script src="./js/index-pop-up.js"></script>
     </body>
 </html>
