@@ -175,9 +175,7 @@ class PageLogInOptions {
      */
     cargarListaUsuarios(){
         let usuarios = this._session.getValorSesion(this._session._listaUsuariosCreados);
-        console.log(usuarios);
         usuarios.push(this._usuario);
-        console.log(usuarios);        
         this._session.setValorSesion(this._session._listaUsuariosCreados, usuarios);
     }
     /**
@@ -223,9 +221,7 @@ class PageLogInOptions {
             popErrores.imprimir();
         } else {
             this.addUsuario();
-            console.log("addUsuario");
             this.cargarListaUsuarios();
-            console.log("cargarListaUsuarios");
             this.ingresar();
         }
     }

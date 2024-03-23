@@ -23,4 +23,3 @@ const closePopUpSesionUnico = document.getElementById("closePopUpSesionUnico");
 const tool = new Tools();
 const pageLogInOptions = new PageLogInOptions();
 const sesion = new Sesion();
-console.log("prueba");

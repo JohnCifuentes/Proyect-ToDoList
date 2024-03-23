@@ -1,9 +1,24 @@
-if(sesion.getValorSesion(sesion._listaUsuariosCreados).length == 0){
-    const usuarioAdmin = new Usuario("John A. Cifuentes Murillo", "johncifuentes97@gmail.com", "3232337553", "1094Jo962H750n&.");
+if(sesion.getValorSesion(sesion._listaUsuariosCreados) == null || sesion.getValorSesion(sesion._listaUsuariosCreados).length == 0){
     const listaUsuarios = [];
+    const usuarioAdmin = new Usuario("John A. Cifuentes Murillo", "johncifuentes97@gmail.com", "3232337553", "1094Jo962H750n&.");
     listaUsuarios.push(usuarioAdmin);
     sesion.setValorSesion(sesion._listaUsuariosCreados, listaUsuarios);
 }
+/*
+try{
+    if(sesion.getValorSesion(sesion._listaUsuariosCreados) == null || sesion.getValorSesion(sesion._listaUsuariosCreados).length == 0){
+        const listaUsuarios = [];
+        const usuarioAdmin = new Usuario("John A. Cifuentes Murillo", "johncifuentes97@gmail.com", "3232337553", "1094Jo962H750n&.");
+        listaUsuarios.push(usuarioAdmin);
+        sesion.setValorSesion(sesion._listaUsuariosCreados, listaUsuarios);
+    }
+} catch(e) {
+    const listaUsuarios = [];
+    const usuarioAdmin = new Usuario("John A. Cifuentes Murillo", "johncifuentes97@gmail.com", "3232337553", "1094Jo962H750n&.");
+    listaUsuarios.push(usuarioAdmin);
+    sesion.setValorSesion(sesion._listaUsuariosCreados, listaUsuarios);
+}
+*/
 
 
 if(sesion.getValorSesion(sesion._usuarioConectado) === null){
