@@ -7,7 +7,7 @@
     width: 100vw;
     display: grid;
     grid-auto-columns: auto;
-    grid-template-rows: 0.5fr 0.5fr 7fr 2fr;
+    grid-template-rows: 0.5fr 3rem 7fr 2fr;
 }
 
 .grid-container-simple{

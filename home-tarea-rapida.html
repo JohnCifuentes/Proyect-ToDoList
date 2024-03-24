@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>To Dan List - Pomodoro</title>
+        <link rel="shortcut icon" href="./img/tornado.svg"/>
+        <link rel="stylesheet" href="./css/estandar.css"/>
+        <link rel="stylesheet" href="./css/header.css"/>
+        <link rel="stylesheet" href="./css/nav.css"/>
+        <link rel="stylesheet" href="./css/home-tarea-rapida.css"/>
+        <link rel="stylesheet" href="./css/estilos-log.css"/>
+        <link rel="stylesheet" href="./css/home-pop-up.css"/>
+        <link rel="stylesheet" href="./css/responsive.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    </head>
+    <body>
+        <div class="container-all">
+            <header id="header">
+                <div class="container-header-button cursor-pointer" id="btnUsuario">
+                    <button class="header-button">
+                        <i class="bi bi-person-fill"></i>
+                    </button>
+                    <span id="nombreUsuarioLogeado"></span>
+                </div>
+                <div class="container-header-button cursor-pointer" id="btnCrearUsuario">
+                    <button class="header-button">
+                        <i class="bi bi-person-plus-fill"></i> 
+                    </button>
+                    <span> Crear Usuario</span>
+                </div>
+                <div class="container-header-button cursor-pointer" id="btnCerrarSesion">
+                    <button class="header-button">
+                        <i class="bi bi-door-closed-fill"></i>
+                    </button>
+                    <span> Cerrar Sesion</span>
+                </div>
+                <div class="container-header-button cursor-pointer" id="btnModoPantalla">
+                    <button class="header-button">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <span> Modo Oscuro</span>
+                </div>
+                <div class="container-header-button cursor-pointer">
+                    <button class="header-button">
+                        <i class="bi bi-linkedin"></i>
+                    </button>
+                    <span>
+                        <a href="https://www.linkedin.com/in/johnalexanderc/" target="_blank"> LinkedIn</a>
+                    </span>
+                </div>
+            </header>
+            <nav>
+                <ul class="container-lista-navegacion">
+                    <li class="lista-opciones">
+                        <a class="text-nav cursor-pointer" title="Tareas">Tareas</a><i class="bi bi-arrow-right"></i>
+                        <div class="lista-opciones-menu-tarea">
+                            <ul>
+                                <li><a href="./home-proyecto.html" class="text-nav cursor-pointer">Nuevo Proyecto</a></li>
+                                <li><a href="./home-tarea.html" class="text-nav cursor-pointer">Nueva Tarea</a></li>
+                                <li><a href="./home-tarea-rapida.html" class="text-nav cursor-pointer">Tarea Rapida</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="./home-pomodoro.html" class="text-nav cursor-pointer" title="Pomodoro">Pomodoro </a>
+                    </li>
+                </ul>
+            </nav>
+            <main>
+                <div class="content-home-tarea-rapida">
+                    <aside>
+                        <ul class="atributos-tarea-btn">
+                            <li class="cursor-pointer posicion-sub-menu atributos-portada">
+                                <p>Portada</p>
+                                <div class="sub-atributos-portada sub-atributos">
+                                    <input type="color" id="atributoPortada" name="atributoPortada">
+                                </div>
+                            </li>
+                            <li class="cursor-pointer posicion-sub-menu atributos-miembros">
+                                <p>Miembros</p>
+                                <div class="sub-atributos-miembros sub-atributos">
+                                    <ol id="atributosListadosMiembros">
+                                    </ol>
+                                </div>
+                            </li>
+                            <li class="cursor-pointer posicion-sub-menu atributos-etiquetas">
+                                <p>Etiquetas</p>
+                                <div class="sub-atributos-etiquetas sub-atributos">
+                                    <ol id="atributosListadosEtiquetas">
+                                        <li>prueba</li>
+                                    </ol>
+                                </div>
+                            </li>
+                            <li class="cursor-pointer posicion-sub-menu atributos-fechas">
+                                <p>Fechas</p>
+                                <div class="sub-atributos-fechas sub-atributos">
+                                    <input type="date" id="atributoFechas" name="atributoFechas">
+                                </div>
+                            </li>
+                            <li class="cursor-pointer posicion-sub-menu atributos-proyectos">
+                                <p>Proyectos</p>
+                                <div class="sub-atributos-proyectos sub-atributos">
+                                    <ol id="atributosListadosProyectos">
+                                        <li>prueba</li>
+                                    </ol>
+                                </div>
+                            </li>
+                        </ul>
+                    </aside>
+                    <div>
+                        <form class="content-tarea-rapida" id="colorPortada">
+                            <div class="content-tarea-rapida-botones">
+                                <div class="input-icon">
+                                    <input type="text" id="tituloTarea" name="tituloTarea" 
+                                        placeholder="Ingrese un titulo para su tarea"/>
+                                    <i class="bi bi-x-circle-fill cursor-pointer btn-limpiar" id="btnTituloTarea"></i>
+                                </div>
+                                <div>
+                                    <button>Cancelar</button>
+                                </div>
+                                <div>
+                                    <button>Agregar</button>    
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>Miembros</span>
+                                    <ol class="atributos-tarea-lista-select miembros" id="listaMiembrosSeleccionados" formArrayName="listaMiembrosSeleccionados">
+                                    </ol>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <div class="etiqueta-ajuste">
+                                        <span>Etiquetas</span>
+                                        <div class="input-icon">
+                                            <input type="text" id="nuevaEtiqueta" name="nuevaEtiqueta"
+                                                placeholder="Ingrese una nueva etiqueta">
+                                            <i class="bi bi-x-circle-fill cursor-pointer btn-limpiar" id="btnNuevaEtiqueta"></i>
+                                        </div>
+                                    </div>
+                                    <ol class="atributos-tarea-lista-select etiquetas" id="listaEtiquetasSeleccionadas" formArrayName="listaEtiquetasSeleccionadas">
+                                    </ol>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>Descripcion</span>
+                                    <textarea class="text-area" id="descripcionTarea" name="descripcionTarea"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>Comentarios</span>
+                                    <textarea class="text-area" id="comentarioTarea" name="comentarioTarea"></textarea>
+                                    <div>
+                                        <ol class="comenarios-tarea comentarios" id="listaComentarios" formArrayName="listaComentarios">
+                                            <li>prueba</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <footer>
+            </footer>
+        </div>
+        <div class="pop-up-errores" id="popUpError">
+            <div class="pop-up-content-errores">
+                <h2>Advertencia(s)</h2>
+                <ol id="listaErrores"></ol>
+            </div>
+        </div>
+        <script src="./js/clases.js"></script>
+        <script src="./js/constantes.js"></script>
+        <script src="./js/general.js"></script>
+        <script src="./js/home-tarea-rapida.js"></script>
+        
+    </body>
+</html>

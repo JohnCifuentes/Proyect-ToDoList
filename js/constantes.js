@@ -1,6 +1,7 @@
 /**
  * 
  */
+const btnUsuario = document.getElementById("btnUsuario");
 const btnCrearUsuario = document.getElementById("btnCrearUsuario");
 const btnCerrarSesion = document.getElementById("btnCerrarSesion");
 const btnIncognito = document.getElementById("btnIncognito");
