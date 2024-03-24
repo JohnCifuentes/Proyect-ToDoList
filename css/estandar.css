@@ -1,3 +1,17 @@
+:root{
+    --size-max-text: 40px;
+    --size-sub-max-text: 30px;
+    --size-text : 25px;
+}
+
+h1{
+    font-size: var(--size-max-text);
+}
+
+h2{
+    font-size: var(--size-sub-max-text);
+}
+
 *{
     margin: 0%;
     padding: 0%;
@@ -6,6 +20,10 @@
 a{
     text-decoration: none;
     font-size: inherit;
+}
+
+a:hover{
+    color: inherit;
 }
 
 a:visited{
@@ -26,6 +44,7 @@ input[type="number"]:not(data-compact){
 
 button{
     background-color: inherit;
+    cursor: inherit;
 }
 
 .pop-up{

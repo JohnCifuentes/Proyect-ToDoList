@@ -9,8 +9,7 @@ div.container-header-button{
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    margin-right: 50px;
-    min-width: 110px;
+    margin-right: 30px;
 }
 
 .header-button{
@@ -23,5 +22,5 @@ div.container-header-button:hover{
 }
 
 div.container-header-button span{
-    font-size: 20px;
+    font-size: var(--size-text);
 }

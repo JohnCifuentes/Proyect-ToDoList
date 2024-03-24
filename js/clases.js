@@ -2,6 +2,7 @@ class Sesion{
     constructor(){
         this._listaUsuariosCreados = "listUsers";
         this._usuarioConectado = "currentUser";
+        this._listaEtiquetas = "listTags"
     }
     /**
      * 
@@ -54,18 +55,13 @@ class Tools{
 }
 
 class Usuario{
-    constructor(usuarioNombre, usuarioCorreo, usuarioTelefono, usuarioContrasena){
+    constructor(usuarioNombre, abrv, usuarioCorreo, usuarioTelefono, usuarioContrasena){
         this._nombre = usuarioNombre;
+        this._abrv = abrv;
         this._correo = usuarioCorreo;
         this._telefono = usuarioTelefono;
         this._password = usuarioContrasena;
         this._login = false;
-    }
-    /**
-     * 
-     */
-    getNombre(){
-        return this._nombre;
     }
     /**
      * 
@@ -76,20 +72,8 @@ class Usuario{
     /**
      * 
      */
-    getCorreo(){
-        return this._correo;
-    }
-    /**
-     * 
-     */
     setCorreo(correo){
         this._correo = correo;
-    }
-    /**
-     * 
-     */
-    getTelefono(){
-        return this._telefono;
     }
     /**
      * 
@@ -100,26 +84,20 @@ class Usuario{
     /**
      * 
      */
-    getPassword(){
-        return this._password;
-    }
-    /**
-     * 
-     */
     setPassword(password){
         this._password = password;
     }
     /**
      * 
      */
-    getLogin(){
-        return this._login;
+    setLogin(login){
+        this._login = login;
     }
     /**
      * 
      */
-    setLogin(login){
-        this._login = login;
+    setAbrv(abrv){
+        this._abrv = abrv;
     }
 }
 
@@ -189,6 +167,14 @@ class PageLogInOptions {
      */
     addUsuario(){
         this._usuario.setNombre(this._usuarioNombre);
+
+        const nombreAbrev = this._usuarioNombre.split(" ");
+        let abrv = "";
+        for(let i = 0; i < nombreAbrev.length; i++){
+            abrv += nombreAbrev[i].charAt(0);
+        }
+        this._usuario.setAbrv(abrv);
+
         try{
             this._usuario.setCorreo(this._usuarioCorreo);
             this._usuario.setTelefono(this._usuarioTelefono);
@@ -269,5 +255,12 @@ class PageLogInOptions {
     cerrarCuenta(){
         this._session.removeItem(this._session._usuarioConectado);
         location.href = "index.html";
+    }
+}
+
+
+class Etiquetas{
+    constructor(nombre){
+        this._nombre = nombre;
     }
 }

@@ -1,0 +1,64 @@
+nav{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr;
+}
+
+ul.container-lista-navegacion{
+    border-top: 1px solid  gainsboro;
+    background-color: aliceblue;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+ul.container-lista-navegacion > li{
+    height: 100%;
+    width: 50%;
+    text-align: center;
+}
+
+ul.container-lista-navegacion > li a{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.lista-opciones{
+    position: relative;
+    top: 0;
+}
+
+.lista-opciones-menu-tarea{
+    display: none;
+    position: absolute;
+    top: 2.9rem;
+    width: 100%;
+}
+
+.lista-opciones-menu-tarea ul{
+    background-color: aliceblue;
+    list-style: none;
+}
+
+.lista-opciones:hover i{
+    display: inline-block;
+    transform: rotate(90deg);
+}
+
+.lista-opciones:hover .lista-opciones-menu-tarea{
+    max-height: 20rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+a.text-nav{
+    font-size: var(--size-text);
+}
+
+a.text-nav:hover{
+    color: brown;
+    border-bottom: 1px solid gainsboro;
+}
