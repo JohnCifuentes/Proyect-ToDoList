@@ -1,0 +1,77 @@
+div.lista-tareas-usuario{
+    min-height: var(--minimo-tamano-tarjetas);
+    overflow-x: auto;
+    display: flex;
+    flex-flow: row;
+    max-width: 99vw;
+    padding: 0px 30px;
+    justify-content: space-around;
+}
+
+div.lista-tareas-usuario ol{
+    list-style: none;
+}
+
+div.lista-tareas-usuario > ol{
+    min-height: var(--minimo-tamano-tarjetas);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.tarjeta-front-back{
+    position: relative;
+}
+
+div.lista-tareas-front{
+    backface-visibility: hidden;
+    min-width: 300px;
+    min-height: var(--minimo-tamano-tarjetas);
+    border: 1px solid black;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0.5em;
+    transition: 0.6s;
+}
+
+div.lista-tareas-back{
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0%;
+    min-width: 300px;
+    min-height: var(--minimo-tamano-tarjetas);
+    border: 1px solid black;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-gap: 0.5em;
+    transition: 0.6s;
+    transform: rotateY(180deg);
+}
+
+div.lista-tareas-front h3, div.lista-tareas-back h3{
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+.tarjeta-front-back:hover .lista-tareas-front{
+    transform: rotateY(180deg);
+}
+
+.tarjeta-front-back:hover .lista-tareas-back{
+    transform: rotateY(0);
+}
+
+.lista-tareas-back-etiquetas > li{
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    background-color: #C0392B;
+}

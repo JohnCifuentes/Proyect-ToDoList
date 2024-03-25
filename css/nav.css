@@ -52,6 +52,7 @@ ul.container-lista-navegacion > li a{
     display: flex;
     gap: 1rem;
     flex-direction: column;
+    z-index: 2;
 }
 
 a.text-nav{

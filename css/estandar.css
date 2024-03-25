@@ -2,6 +2,7 @@
     --size-max-text: 40px;
     --size-sub-max-text: 30px;
     --size-text : 25px;
+    --minimo-tamano-tarjetas: 300px;
 }
 
 h1{
@@ -100,4 +101,8 @@ button{
 .close-pop-up:hover{
     background-color: hsla(6, 63%, 46%, 0.814);   
     color: white;
+}
+
+#listaErrores{
+    list-style: none;
 }
