@@ -85,6 +85,8 @@ cargarListadoEtiquetas();
 document.getElementById("nuevaEtiqueta").addEventListener("change", () => {
     const listadoEtiquetasCreadas = sesion.getValorSesion(sesion._listaEtiquetas);
     listadoEtiquetasCreadas.push(new Etiquetas(event.target.value));
+    agregarEtiqueta(event.target.value);
+    event.target.value = "";
     sesion.setValorSesion(sesion._listaEtiquetas, listadoEtiquetasCreadas);
     cargarListadoEtiquetas();
 })
@@ -115,6 +117,8 @@ document.getElementById("btnCancelar").addEventListener("click", () => {
 document.getElementById("btnAgregar").addEventListener("click", () => {
     event.preventDefault();
     tarea.validarFormulario(tituloTarea.value, descripcionTarea.value);
+    let consecutivoTarea = sesion.getValorSesion(sesion._consecutivoTarea);
+    consecutivoTarea++;
     if(tarea._correcto){
         tarea.cargarDatos(
             atributoPortada,
@@ -123,12 +127,14 @@ document.getElementById("btnAgregar").addEventListener("click", () => {
             atributoFechas.value,
             tituloTarea.value,
             descripcionTarea.value,
-            comentarios
+            comentarios,
+            consecutivoTarea
         );
         const usuarioTareas = new UsuarioTareas(usuarioConectado, tarea);
         const listaTareas = sesion.getValorSesion(sesion._listaTareas);
         listaTareas.push(usuarioTareas);
         sesion.setValorSesion(sesion._listaTareas, listaTareas);
+        sesion.setValorSesion(sesion._consecutivoTarea, consecutivoTarea);
         location.href = "home-tarea-rapida.html";
     }
 })

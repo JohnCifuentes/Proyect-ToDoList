@@ -24,11 +24,11 @@ a{
 }
 
 a:hover{
-    color: inherit;
+    color: initial;
 }
 
 a:visited{
-    color: inherit;
+    color: initial;
 }
 
 input[type="text"]:not(data-compact){
@@ -40,6 +40,10 @@ input[type="password"]:not(data-compact){
 }
 
 input[type="number"]:not(data-compact){
+    padding: 8px 6px;
+}
+
+textarea:not(data-compact){
     padding: 8px 6px;
 }
 

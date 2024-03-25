@@ -18,6 +18,10 @@ if(sesion.getValorSesion(sesion._listaTareas) == null || sesion.getValorSesion(s
     sesion.setValorSesion(sesion._listaTareas, listaTareas);
 }
 
+if(sesion.getValorSesion(sesion._consecutivoTarea) == null){
+    sesion.setValorSesion(sesion._consecutivoTarea, 0);
+}
+
 if(sesion.getValorSesion(sesion._usuarioConectado) === null){
     btnUsuario.style.display = "none";
     btnCerrarSesion.style.display = "none";

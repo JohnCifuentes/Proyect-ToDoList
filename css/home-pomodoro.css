@@ -1,3 +1,9 @@
+main{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 2fr 5fr;
+}
+
 div.lista-tareas-usuario{
     min-height: var(--minimo-tamano-tarjetas);
     overflow-x: auto;
@@ -68,10 +74,106 @@ div.lista-tareas-front h3, div.lista-tareas-back h3{
 }
 
 .lista-tareas-back-etiquetas > li{
+    background-color: #C0392B;
     border: 1px solid black;
     border-radius: 5px;
     display: inline-block;
     padding: 10px;
     margin: 5px;
-    background-color: #C0392B;
+    color: white;
+}
+/****/
+div.tarea-seleccionada{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 2rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    grid-template-rows: auto;
+    grid-gap: 1em;
+}
+
+div.tarea-seleccionada > div{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2rem;
+}
+
+div.tarea-seleccionada-comentarios{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, 0.5fr) 3.5fr;
+}
+
+div.tarea-seleccionada-comentarios > span{
+    align-self: center;
+    font-size: var(--size-text);
+}
+
+ol.comentarios-tarea{
+    list-style: none;
+}
+
+ol.comentarios-tarea > li{
+    background-color: #D98880;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+}
+
+div.tarea-seleccionada-reloj{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 4fr;
+    justify-items: center;
+}
+
+div.tarea-seleccionada-reloj > h1{
+    align-self: center;
+}
+
+.reloj{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 50px);
+    grid-gap: 1em;
+}
+
+.reloj > div{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+}
+
+.reloj-cuenta-positiva,.reloj-cuenta-negativa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reloj-cuenta-positiva{
+    background-color: #211103;
+    color: white;
+}
+
+.reloj-cuenta-negativa{
+    background-color: #7B0D1E;
+    color: white;
+}
+
+.reloj > div:last-child{
+    grid-column: 2 / 3;
+    width: 100%;
+    height: 100%;
+}
+
+.reloj > div:last-child > button{
+    width: 100%;
+    height: 100%;
+    font-size: var(--size-text);
 }

@@ -5,6 +5,7 @@ class Sesion{
         this._listaEtiquetas = "listTags";
         this._listaTareas = "listTask"
         this._usuarioConectado = "currentUser";
+        this._consecutivoTarea = "idTask";
     }
     /**
      * 
@@ -299,7 +300,7 @@ class Tarea{
     /**
      * 
      */
-    cargarDatos(portada, miembros, etiquetas, fecha, titulo, descripcion, comentarios){
+    cargarDatos(portada, miembros, etiquetas, fecha, titulo, descripcion, comentarios, consecutivo){
         this._portada = (portada==null||portada=="")? "white":portada;
         this._miembros = miembros;
         this._etiquetas = etiquetas;
@@ -307,6 +308,7 @@ class Tarea{
         this._titulo = titulo;
         this._descripcion = descripcion;
         this._comentarios = comentarios;
+        this._id = consecutivo;
     }
 }
 
