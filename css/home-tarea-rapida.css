@@ -108,17 +108,17 @@ div.content-tarea-rapida-botones div button{
     width: 100%;
 }
 
-ol.atributos-tarea-lista-select,.comenarios-tarea{
+ol.atributos-tarea-lista-select,.comentarios-tarea{
     margin-top: 10px;
     list-style: none;
 }
 
-ol.atributos-tarea-lista-select > li,.comenarios-tarea > li{
+ol.atributos-tarea-lista-select > li,.comentarios-tarea > li{
     border: 1px solid black;
     border-radius: 5px;
     display: inline-block;
     padding: 10px;
-    margin-right: 5px;
+    margin: 5px;
 }
 
 .miembros > li{

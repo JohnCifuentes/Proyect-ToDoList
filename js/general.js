@@ -13,6 +13,15 @@ if(sesion.getValorSesion(sesion._listaEtiquetas) == null || sesion.getValorSesio
     sesion.setValorSesion(sesion._listaEtiquetas, listaEtiquetas);
 }
 
+if(sesion.getValorSesion(sesion._listaTareas) == null || sesion.getValorSesion(sesion._listaTareas).length == 0){
+    const listaTareas = [];
+    sesion.setValorSesion(sesion._listaTareas, listaTareas);
+}
+
+if(sesion.getValorSesion(sesion._consecutivoTarea) == null){
+    sesion.setValorSesion(sesion._consecutivoTarea, 0);
+}
+
 if(sesion.getValorSesion(sesion._usuarioConectado) === null){
     btnUsuario.style.display = "none";
     btnCerrarSesion.style.display = "none";

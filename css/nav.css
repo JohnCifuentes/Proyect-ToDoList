@@ -10,13 +10,11 @@ ul.container-lista-navegacion{
     list-style: none;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    justify-items: center;
 }
 
 ul.container-lista-navegacion > li{
     height: 100%;
-    width: 50%;
+    width: 100%;
     text-align: center;
 }
 
@@ -52,9 +50,11 @@ ul.container-lista-navegacion > li a{
     display: flex;
     gap: 1rem;
     flex-direction: column;
+    z-index: 2;
 }
 
 a.text-nav{
+    color: black;
     font-size: var(--size-text);
 }
 
@@ -62,3 +62,4 @@ a.text-nav:hover{
     color: brown;
     border-bottom: 1px solid gainsboro;
 }
+

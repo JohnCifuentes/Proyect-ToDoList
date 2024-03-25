@@ -1,8 +1,11 @@
 class Sesion{
     constructor(){
+        this._listaTareasUsuario = "listTasksUser";
         this._listaUsuariosCreados = "listUsers";
+        this._listaEtiquetas = "listTags";
+        this._listaTareas = "listTask"
         this._usuarioConectado = "currentUser";
-        this._listaEtiquetas = "listTags"
+        this._consecutivoTarea = "idTask";
     }
     /**
      * 
@@ -114,7 +117,7 @@ class PopUpErrores{
      */
     imprimir(){
         this._listaErrores.forEach((e) => {
-            this._html += e;
+            this._html += "<li>"+e+"</li>";
         });
 
         document.getElementById(this._listaTarget).innerHTML = this._html;
@@ -192,7 +195,7 @@ class PageLogInOptions {
      * 
      */
     validarFormularioCompleto(){
-        let errores = [];
+        const errores = [];
         if(this._usuarioNombre == "" || this._usuarioCorreo == "" || this._usuarioTelefono == "" || this._usuarioPassword == ""){
             errores.push("Los datos son requeridos...");
         } else if(!this._tool.checkCorreo(this._usuarioCorreo)){
@@ -215,7 +218,7 @@ class PageLogInOptions {
      * 
      */
     validarFormularioUnico(){
-        let errores = [];
+        const errores = [];
         if(this._usuarioNombre == ""){
             errores.push("Los datos son requeridos...");
             const popErrores = new PopUpErrores(errores, "listaErrores", "popUpError");
@@ -239,7 +242,7 @@ class PageLogInOptions {
             }
         })
         if(!existeUsuario){
-            let errores = [];
+            const errores = [];
             errores.push("No existe ninguna cuenta con estos datos...");
             const popErrores = new PopUpErrores(errores, "listaErrores", "popUpError");
             popErrores.imprimir();
@@ -258,9 +261,69 @@ class PageLogInOptions {
     }
 }
 
-
 class Etiquetas{
     constructor(nombre){
         this._nombre = nombre;
+    }
+}
+
+class Tarea{
+    constructor(){
+        this._portada = "white";
+        this._miembros = [];
+        this._etiquetas = [];
+        this._fecha = null;
+        this._titulo = null;
+        this._descripcion = null;
+        this._comentarios = [];
+        this._correcto = false;
+    }
+    /**
+     * 
+     */
+    validarFormulario(titulo, descripcion){
+        const errores = [];
+        if(titulo == ""){
+            errores.push("Debes ingresar un titulo");
+        } 
+        if(descripcion == ""){
+            errores.push("Debes ingresar una descripcion");
+        }
+        if(errores.length > 0){
+            const popErrores = new PopUpErrores(errores, "listaErrores", "popUpError");
+            popErrores.imprimir();
+            this._correcto = false;
+        } else {
+            this._correcto = true;
+        }
+    }
+    /**
+     * 
+     */
+    cargarDatos(portada, miembros, etiquetas, fecha, titulo, descripcion, comentarios, consecutivo){
+        this._portada = (portada==null||portada=="")? "white":portada;
+        this._miembros = miembros;
+        this._etiquetas = etiquetas;
+        this._fecha = fecha;
+        this._titulo = titulo;
+        this._descripcion = descripcion;
+        this._comentarios = comentarios;
+        this._id = consecutivo;
+    }
+}
+
+class UsuarioTareas{
+    constructor(usuario, tarea){
+        this._usuario = usuario;
+        this._tarea = tarea;
+    }
+    getPortada(){
+        return this._tarea._portada;
+    }
+    getTituloTarea(){
+        return this._tarea._titulo;
+    }
+    getFechaTarea(){
+        return this._tarea._fecha;
     }
 }
